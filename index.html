@@ -155,16 +155,30 @@
             </form>
         </div>
     </main>
-    <footer><p>2023, @Компания</p></footer>
+    <footer>
+        <p>2023, @Компания</p>
+    </footer>
     <script>
         document.getElementById("submit").addEventListener("click", function (event) {
             event.preventDefault();
-            console.log("Выбрана башня: ", document.getElementById("select-tower").value);
-            console.log("Выбран этаж: ", document.getElementById("select-floor").value);
-            console.log("Выбрана переговорка: ", document.getElementById("select-meeting").value);
-            console.log("Выбрана дата: ", document.querySelector("input[type=date]").value);
-            console.log("Выбрано время: ", document.querySelector("input[type=time]").value);
-            console.log("Комментарий: ", document.getElementById("textarea-comment").value);
+            var tower = document.getElementById("select-tower").value;
+            var floor = document.getElementById("select-floor").value;
+            var meeting = document.getElementById("select-meeting").value;
+            var data = document.querySelector("input[type=date]").value;
+            var time = document.querySelector("input[type=time]").value;
+            var comment = document.getElementById("textarea-comment").value;
+
+            var info = {
+                tower: tower,
+                floor: floor,
+                meeting: meeting,
+                data: data,
+                time: time,
+                comment: comment,
+            };
+
+            console.log(JSON.stringify(info));
+
         });
     </script>
 </body>
